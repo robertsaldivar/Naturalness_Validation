@@ -1,0 +1,105 @@
+---
+title: "Corridor_Validation"
+author: "Robert Saldivar"
+date: "January 14, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=FALSE}
+library(tidyverse)
+library(RColorBrewer)
+library(here)
+library(janitor)
+library(kableExtra)
+
+Random_Focal_Species <- read_csv("Random_Focal_Species_Extract.csv")
+Random_Fisher <- read_csv("Random_Fisher_Extract.csv")
+Random_Bobcat <- read_csv("Random_Bobcat_Extract.csv")
+Random_Bear <- read_csv("Random_Bear_Extract.csv")
+Bear <- read_csv("Bear_Extract.csv")
+Bobcat <- read_csv("Bobcat_Extract.csv")
+Fisher <- read_csv("Fisher_Extract.csv")
+Focal_Species <- read_csv("Focal_Species_Extract.csv")
+```
+
+```{r}
+#Running Statistical Tests for bears againgst the various identified corridors
+
+bear_ttest_resistance <- t.test()
+bear_ttest_2core <- t.test()
+bear_ttest_3core <- t.test()
+bear_ttest_bar <- t.test
+bear_ttest_bar_close <- t.test()
+bear_ttest_node <- t.test()
+bear_ttest_node_close <- t.test()
+bear_ttest_2core_trunk <- t.test()
+bear_ttest_3core_trunk <- t.test()
+bear_ttest_bar_trunk <- t.test()
+bear_ttest_bar_close_trunk <- t.test()
+bear_ttest_node_trunk <- t.test()
+bear_ttest_node_close_trunk <- t.test()
+
+
+```
+
+```{r}
+#Running Statistical Tests for bobcats againgst the various identified corridors
+
+bobcat_ttest_resistance <- t.test()
+bobcat_ttest_2core <- t.test()
+bobcat_ttest_3core <- t.test()
+bobcat_ttest_bar <- t.test
+bobcat_ttest_bar_close <- t.test()
+bobcat_ttest_node <- t.test()
+bobcat_ttest_node_close <- t.test()
+bobcat_ttest_2core_trunk <- t.test()
+bobcat_ttest_3core_trunk <- t.test()
+bobcat_ttest_bar_trunk <- t.test()
+bobcat_ttest_bar_close_trunk <- t.test()
+bobcat_ttest_node_trunk <- t.test()
+bobcat_ttest_node_close_trunk <- t.test()
+
+```
+
+```{r}
+#Running Statistical Tests for fishers againgst the various identified corridors
+
+fisher_ttest_resistance <- t.test()
+fisher_ttest_2core <- t.test()
+fisher_ttest_3core <- t.test()
+fisher_ttest_bar <- t.test
+fisher_ttest_bar_close <- t.test()
+fisher_ttest_node <- t.test()
+fisher_ttest_node_close <- t.test()
+fisher_ttest_2core_trunk <- t.test()
+fisher_ttest_3core_trunk <- t.test()
+fisher_ttest_bar_trunk <- t.test()
+fisher_ttest_bar_close_trunk <- t.test()
+fisher_ttest_node_trunk <- t.test()
+fisher_ttest_node_close_trunk <- t.test()
+
+```
+
+```{r}
+#Running Statistical Tests for all focal species againgst the various identified corridors
+
+focal_species_ttest_resistance <- t.test()
+focal_species_ttest_2core <- t.test()
+focal_species_ttest_3core <- t.test()
+focal_species_ttest_bar <- t.test
+focal_species_ttest_bar_close <- t.test()
+focal_species_ttest_node <- t.test()
+focal_species_ttest_node_close <- t.test()
+focal_species_ttest_2core_trunk <- t.test()
+focal_species_ttest_3core_trunk <- t.test()
+focal_species_ttest_bar_trunk <- t.test()
+focal_species_ttest_bar_close_trunk <- t.test()
+focal_species_ttest_node_trunk <- t.test()
+focal_species_ttest_node_close_trunk <- t.test()
+
+```
+
