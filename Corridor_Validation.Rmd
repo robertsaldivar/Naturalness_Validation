@@ -138,7 +138,7 @@ bobcat_summary <- Bobcat %>%
 ```{r}
 #looking at the summary information for random bobcat points
 
-random_bobcatr_summary <- Random_Bobcat %>%
+random_bobcat_summary <- Random_Bobcat %>%
   summarize( 
     resist_mean = mean(Nat_resistance_2011),
     resist_sd = sd(Nat_resistance_2011),
@@ -317,6 +317,12 @@ random_focal_species_summary <- Random_Focal_Species %>%
 
 ```{r}
 #Going to try to join the summary tables into a together
+
+bear_table <- full_join(bear_summary, random_bear_summary)
+bobcat_table <- full_join(bobcat_summary, random_bobcat_summary)
+fisher_table <- full_join(fisher_summary, random_fisher_summary)
+focal_species_table <- full_join(Focal_Species_summary, random_focal_species_summary)
+
 
 ```
 
