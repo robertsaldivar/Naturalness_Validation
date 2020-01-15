@@ -358,19 +358,19 @@ bear_ttest_node_close_trunk
 ```{r}
 #Running Statistical Tests for bobcats againgsd the various identified corridors
 
-bobcat_ttest_resistance <- t.test()
-bobcat_ttest_2core <- t.test()
-bobcat_ttest_3core <- t.test()
-bobcat_ttest_bar <- t.test
-bobcat_ttest_bar_close <- t.test()
-bobcat_ttest_node <- t.test()
-bobcat_ttest_node_close <- t.test()
-bobcat_ttest_2core_trunk <- t.test()
-bobcat_ttest_3core_trunk <- t.test()
-bobcat_ttest_bar_trunk <- t.test()
-bobcat_ttest_bar_close_trunk <- t.test()
-bobcat_ttest_node_trunk <- t.test()
-bobcat_ttest_node_close_trunk <- t.test()
+bobcat_ttest_resistance <- t.test(Bobcat$Nat_resistance_2011, Random_Bobcat$Nat_resistance_2011)
+bobcat_ttest_2core <- t.test(Bobcat$Nat_2c_default_corridors, Random_Bobcat$Nat_2c_default_corridors)
+bobcat_ttest_3core <- t.test(Bobcat$Nat_3c_default_corridors, Random_Bobcat$Nat_3c_default_corridors)
+bobcat_ttest_bar <- t.test(Bobcat$GP_Nat_bar_corridors, Random_Bobcat$GP_Nat_bar_corridors)
+bobcat_ttest_bar_close <- t.test(Bobcat$GP_bar_close_corridors, Random_Bobcat$GP_bar_close_corridors)
+bobcat_ttest_node <- t.test(Bobcat$GP_Nat_node_corridors, Random_Bobcat$GP_Nat_node_corridors)
+bobcat_ttest_node_close <- t.test(Bobcat$node_close_corridors, Random_Bobcat$node_close_corridors)
+bobcat_ttest_2core_trunk <- t.test(Bobcat$Nat_2c_default_corridors_truncated_at_200k, Random_Bobcat$Nat_2c_default_corridors_truncated_at_200k)
+bobcat_ttest_3core_trunk <- t.test(Bobcat$Nat_3c_default_corridors_truncated_at_200k, Random_Bobcat$Nat_3c_default_corridors_truncated_at_200k)
+bobcat_ttest_bar_trunk <- t.test(Bobcat$GP_Nat_bar_corridors_truncated_at_200k, Random_Bobcat$GP_Nat_bar_corridors_truncated_at_200k)
+bobcat_ttest_bar_close_trunk <- t.test(Bobcat$GP_bar_close_corridors_truncated_at_200k, Random_Bobcat$GP_bar_close_corridors_truncated_at_200k)
+bobcat_ttest_node_trunk <- t.test(Bobcat$GP_Nat_node_corridors_truncated_at_200k, Random_Bobcat$GP_Nat_node_corridors_truncated_at_200k)
+bobcat_ttest_node_close_trunk <- t.test(Bobcat$node_close_corridors_truncated_at_200k, Random_Bobcat$node_close_corridors_truncated_at_200k)
 
 bobcat_ttest_resistance
 bobcat_ttest_2core
@@ -391,19 +391,19 @@ bobcat_ttest_node_close_trunk
 ```{r}
 #Running Statistical Tests for fishers againgsd the various identified corridors
 
-fisher_ttest_resistance <- t.test()
-fisher_ttest_2core <- t.test()
-fisher_ttest_3core <- t.test()
-fisher_ttest_bar <- t.test
-fisher_ttest_bar_close <- t.test()
-fisher_ttest_node <- t.test()
-fisher_ttest_node_close <- t.test()
-fisher_ttest_2core_trunk <- t.test()
-fisher_ttest_3core_trunk <- t.test()
-fisher_ttest_bar_trunk <- t.test()
-fisher_ttest_bar_close_trunk <- t.test()
-fisher_ttest_node_trunk <- t.test()
-fisher_ttest_node_close_trunk <- t.test()
+fisher_ttest_resistance <- t.test(Fisher$Nat_resistance_2011, Random_Fisher$Nat_resistance_2011)
+fisher_ttest_2core <- t.test(Fisher$Nat_2c_default_corridors, Random_Fisher$Nat_2c_default_corridors)
+fisher_ttest_3core <- t.test(Fisher$Nat_3c_default_corridors, Random_Fisher$Nat_3c_default_corridors)
+fisher_ttest_bar <- t.test(Fisher$GP_Nat_bar_corridors, Random_Fisher$GP_Nat_bar_corridors)
+fisher_ttest_bar_close <- t.test(Fisher$GP_bar_close_corridors, Random_Fisher$GP_Nat_bar_corridors)
+fisher_ttest_node <- t.test(Fisher$GP_Nat_node_corridors, Random_Fisher$GP_Nat_node_corridors)
+fisher_ttest_node_close <- t.test(Fisher$node_close_corridors, Random_Fisher$node_close_corridors)
+fisher_ttest_2core_trunk <- t.test(Fisher$Nat_2c_default_corridors_truncated_at_200k, Random_Fisher$Nat_2c_default_corridors_truncated_at_200k)
+fisher_ttest_3core_trunk <- t.test(Fisher$Nat_3c_default_corridors_truncated_at_200k, Random_Fisher$Nat_3c_default_corridors_truncated_at_200k)
+fisher_ttest_bar_trunk <- t.test(Fisher$GP_Nat_bar_corridors_truncated_at_200k, Random_Fisher$GP_Nat_bar_corridors_truncated_at_200k)
+fisher_ttest_bar_close_trunk <- t.test(Fisher$GP_bar_close_corridors_truncated_at_200k, Random_Fisher$GP_bar_close_corridors_truncated_at_200k)
+fisher_ttest_node_trunk <- t.test(Fisher$GP_Nat_node_corridors_truncated_at_200k, Random_Fisher$GP_Nat_node_corridors_truncated_at_200k)
+fisher_ttest_node_close_trunk <- t.test(Fisher$node_close_corridors_truncated_at_200k, Random_Fisher$node_close_corridors_truncated_at_200k)
 
 fisher_ttest_resistance
 fisher_ttest_2core
@@ -423,19 +423,19 @@ fisher_ttest_node_close_trunk
 ```{r}
 #Running Statistical Tests for all focal species againgsd the various identified corridors
 
-focal_species_ttest_resistance <- t.test()
-focal_species_ttest_2core <- t.test()
-focal_species_ttest_3core <- t.test()
-focal_species_ttest_bar <- t.test
-focal_species_ttest_bar_close <- t.test()
-focal_species_ttest_node <- t.test()
-focal_species_ttest_node_close <- t.test()
-focal_species_ttest_2core_trunk <- t.test()
-focal_species_ttest_3core_trunk <- t.test()
-focal_species_ttest_bar_trunk <- t.test()
-focal_species_ttest_bar_close_trunk <- t.test()
-focal_species_ttest_node_trunk <- t.test()
-focal_species_ttest_node_close_trunk <- t.test()
+focal_species_ttest_resistance <- t.test(Focal_Species$Nat_resistance_2011, Random_Focal_Species$Nat_resistance_2011)
+focal_species_ttest_2core <- t.test(Focal_Species$Nat_2c_default_corridors, Random_Focal_Species$Nat_2c_default_corridors)
+focal_species_ttest_3core <- t.test(Focal_Species$Nat_3c_default_corridors, Random_Focal_Species$Nat_3c_default_corridors)
+focal_species_ttest_bar <- t.test(Focal_Species$GP_Nat_bar_corridors, Random_Focal_Species$GP_Nat_bar_corridors)
+focal_species_ttest_bar_close <- t.test(Focal_Species$GP_bar_close_corridors, Random_Focal_Species$GP_bar_close_corridors)
+focal_species_ttest_node <- t.test(Focal_Species$GP_Nat_node_corridors, Random_Focal_Species$GP_Nat_node_corridors)
+focal_species_ttest_node_close <- t.test(Focal_Species$node_close_corridors, Random_Focal_Species$node_close_corridors)
+focal_species_ttest_2core_trunk <- t.test(Focal_Species$Nat_2c_default_corridors_truncated_at_200k, Random_Fisher$Nat_2c_default_corridors_truncated_at_200k)
+focal_species_ttest_3core_trunk <- t.test(Focal_Species$Nat_3c_default_corridors_truncated_at_200k, Random_Focal_Species$Nat_3c_default_corridors_truncated_at_200k)
+focal_species_ttest_bar_trunk <- t.test(Focal_Species$GP_Nat_bar_corridors_truncated_at_200k, Focal_Species$GP_Nat_bar_corridors_truncated_at_200k)
+focal_species_ttest_bar_close_trunk <- t.test(Focal_Species$GP_bar_close_corridors_truncated_at_200k, Random_Focal_Species$GP_bar_close_corridors_truncated_at_200k)
+focal_species_ttest_node_trunk <- t.test(Focal_Species$GP_Nat_node_corridors_truncated_at_200k, Random_Focal_Species$GP_Nat_node_corridors_truncated_at_200k)
+focal_species_ttest_node_close_trunk <- t.test(Focal_Species$node_close_corridors_truncated_at_200k, Random_Focal_Species$node_close_corridors_truncated_at_200k)
 
 focal_species_ttest_resistance
 focal_species_ttest_2core

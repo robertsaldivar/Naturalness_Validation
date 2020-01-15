@@ -210,6 +210,954 @@ Bear &lt;- read_csv(&quot;Bear_Extract.csv&quot;)
 Bobcat &lt;- read_csv(&quot;Bobcat_Extract.csv&quot;)
 Fisher &lt;- read_csv(&quot;Fisher_Extract.csv&quot;)
 Focal_Species &lt;- read_csv(&quot;Focal_Species_Extract.csv&quot;)</code></pre>
+<pre class="r"><code>#looking at the summary information for bears 
+
+bear_summary &lt;- Bear %&gt;%
+  group_by(verbatimScientificName) %&gt;%
+  summarize( 
+    resist_mean = mean(Nat_resistance_2011),
+    resist_sd = sd(Nat_resistance_2011),
+    resist_length = length(Nat_resistance_2011),
+    core2_mean = mean(Nat_2c_default_corridors),
+    core2_sd = sd(Nat_2c_default_corridors),
+    core3_mean = mean(Nat_3c_default_corridors),
+    core3_sd = sd(Nat_3c_default_corridors),
+    bar_mean = mean(GP_Nat_bar_corridors),
+    bar_sd = sd(GP_Nat_bar_corridors),
+    node_mean = mean(GP_Nat_node_corridors),
+    node_sd = sd(GP_Nat_node_corridors),
+    node_close_mean = mean(node_close_corridors),
+    node_close_sd = sd(node_close_corridors),
+    bar_close_mean = mean(GP_bar_close_corridors),
+    bar_close_sd = sd(GP_bar_close_corridors),
+    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
+  )</code></pre>
+<pre class="r"><code>#looking at the summary information for random bears points
+
+random_bear_summary &lt;- Random_Bear %&gt;%
+  summarize( 
+    resist_mean = mean(Nat_resistance_2011),
+    resist_sd = sd(Nat_resistance_2011),
+    resist_length = length(Nat_resistance_2011),
+    core2_mean = mean(Nat_2c_default_corridors),
+    core2_sd = sd(Nat_2c_default_corridors),
+    core3_mean = mean(Nat_3c_default_corridors),
+    core3_sd = sd(Nat_3c_default_corridors),
+    bar_mean = mean(GP_Nat_bar_corridors),
+    bar_sd = sd(GP_Nat_bar_corridors),
+    node_mean = mean(GP_Nat_node_corridors),
+    node_sd = sd(GP_Nat_node_corridors),
+    node_close_mean = mean(node_close_corridors),
+    node_close_sd = sd(node_close_corridors),
+    bar_close_mean = mean(GP_bar_close_corridors),
+    bar_close_sd = sd(GP_bar_close_corridors),
+    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
+  )</code></pre>
+<pre class="r"><code>#looking at the summary information for bobcats points
+
+bobcat_summary &lt;- Bobcat %&gt;%
+  summarize( 
+    resist_mean = mean(Nat_resistance_2011),
+    resist_sd = sd(Nat_resistance_2011),
+    resist_length = length(Nat_resistance_2011),
+    core2_mean = mean(Nat_2c_default_corridors),
+    core2_sd = sd(Nat_2c_default_corridors),
+    core3_mean = mean(Nat_3c_default_corridors),
+    core3_sd = sd(Nat_3c_default_corridors),
+    bar_mean = mean(GP_Nat_bar_corridors),
+    bar_sd = sd(GP_Nat_bar_corridors),
+    node_mean = mean(GP_Nat_node_corridors),
+    node_sd = sd(GP_Nat_node_corridors),
+    node_close_mean = mean(node_close_corridors),
+    node_close_sd = sd(node_close_corridors),
+    bar_close_mean = mean(GP_bar_close_corridors),
+    bar_close_sd = sd(GP_bar_close_corridors),
+    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
+  )</code></pre>
+<pre class="r"><code>#looking at the summary information for random bobcat points
+
+random_bobcatr_summary &lt;- Random_Bobcat %&gt;%
+  summarize( 
+    resist_mean = mean(Nat_resistance_2011),
+    resist_sd = sd(Nat_resistance_2011),
+    resist_length = length(Nat_resistance_2011),
+    core2_mean = mean(Nat_2c_default_corridors),
+    core2_sd = sd(Nat_2c_default_corridors),
+    core3_mean = mean(Nat_3c_default_corridors),
+    core3_sd = sd(Nat_3c_default_corridors),
+    bar_mean = mean(GP_Nat_bar_corridors),
+    bar_sd = sd(GP_Nat_bar_corridors),
+    node_mean = mean(GP_Nat_node_corridors),
+    node_sd = sd(GP_Nat_node_corridors),
+    node_close_mean = mean(node_close_corridors),
+    node_close_sd = sd(node_close_corridors),
+    bar_close_mean = mean(GP_bar_close_corridors),
+    bar_close_sd = sd(GP_bar_close_corridors),
+    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
+  )</code></pre>
+<pre class="r"><code>#looking at the summary information for Fisher points
+
+fisher_summary &lt;- Fisher %&gt;%
+  group_by(verbatimScientificName) %&gt;%
+  summarize( 
+    resist_mean = mean(Nat_resistance_2011),
+    resist_sd = sd(Nat_resistance_2011),
+    resist_length = length(Nat_resistance_2011),
+    core2_mean = mean(Nat_2c_default_corridors),
+    core2_sd = sd(Nat_2c_default_corridors),
+    core3_mean = mean(Nat_3c_default_corridors),
+    core3_sd = sd(Nat_3c_default_corridors),
+    bar_mean = mean(GP_Nat_bar_corridors),
+    bar_sd = sd(GP_Nat_bar_corridors),
+    node_mean = mean(GP_Nat_node_corridors),
+    node_sd = sd(GP_Nat_node_corridors),
+    node_close_mean = mean(node_close_corridors),
+    node_close_sd = sd(node_close_corridors),
+    bar_close_mean = mean(GP_bar_close_corridors),
+    bar_close_sd = sd(GP_bar_close_corridors),
+    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
+  )</code></pre>
+<pre class="r"><code>#looking at the summary information for random fisher points
+
+random_fisher_summary &lt;- Random_Fisher %&gt;%
+  summarize( 
+    resist_mean = mean(Nat_resistance_2011),
+    resist_sd = sd(Nat_resistance_2011),
+    resist_length = length(Nat_resistance_2011),
+    core2_mean = mean(Nat_2c_default_corridors),
+    core2_sd = sd(Nat_2c_default_corridors),
+    core3_mean = mean(Nat_3c_default_corridors),
+    core3_sd = sd(Nat_3c_default_corridors),
+    bar_mean = mean(GP_Nat_bar_corridors),
+    bar_sd = sd(GP_Nat_bar_corridors),
+    node_mean = mean(GP_Nat_node_corridors),
+    node_sd = sd(GP_Nat_node_corridors),
+    node_close_mean = mean(node_close_corridors),
+    node_close_sd = sd(node_close_corridors),
+    bar_close_mean = mean(GP_bar_close_corridors),
+    bar_close_sd = sd(GP_bar_close_corridors),
+    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
+  )</code></pre>
+<pre class="r"><code>#looking at the summary information for all focal species points
+
+Focal_Species_summary &lt;- Focal_Species %&gt;%
+  group_by(verbatimScientificName) %&gt;%
+  summarize( 
+    resist_mean = mean(Nat_resistance_2011),
+    resist_sd = sd(Nat_resistance_2011),
+    resist_length = length(Nat_resistance_2011),
+    core2_mean = mean(Nat_2c_default_corridors),
+    core2_sd = sd(Nat_2c_default_corridors),
+    core3_mean = mean(Nat_3c_default_corridors),
+    core3_sd = sd(Nat_3c_default_corridors),
+    bar_mean = mean(GP_Nat_bar_corridors),
+    bar_sd = sd(GP_Nat_bar_corridors),
+    node_mean = mean(GP_Nat_node_corridors),
+    node_sd = sd(GP_Nat_node_corridors),
+    node_close_mean = mean(node_close_corridors),
+    node_close_sd = sd(node_close_corridors),
+    bar_close_mean = mean(GP_bar_close_corridors),
+    bar_close_sd = sd(GP_bar_close_corridors),
+    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
+  )</code></pre>
+<pre class="r"><code>#looking at the summary information for random focal species points
+
+random_focal_species_summary &lt;- Random_Focal_Species %&gt;%
+  summarize( 
+    resist_mean = mean(Nat_resistance_2011),
+    resist_sd = sd(Nat_resistance_2011),
+    resist_length = length(Nat_resistance_2011),
+    core2_mean = mean(Nat_2c_default_corridors),
+    core2_sd = sd(Nat_2c_default_corridors),
+    core3_mean = mean(Nat_3c_default_corridors),
+    core3_sd = sd(Nat_3c_default_corridors),
+    bar_mean = mean(GP_Nat_bar_corridors),
+    bar_sd = sd(GP_Nat_bar_corridors),
+    node_mean = mean(GP_Nat_node_corridors),
+    node_sd = sd(GP_Nat_node_corridors),
+    node_close_mean = mean(node_close_corridors),
+    node_close_sd = sd(node_close_corridors),
+    bar_close_mean = mean(GP_bar_close_corridors),
+    bar_close_sd = sd(GP_bar_close_corridors),
+    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
+  )</code></pre>
+<pre class="r"><code>#Going to try to join the summary tables into a together</code></pre>
+<pre class="r"><code>#Running Statistical Tests for bears againgsd the various identified corridors
+
+bear_ttest_resistance &lt;- t.test(Bear$Nat_resistance_2011, Random_Bear$Nat_resistance_2011)
+bear_ttest_2core &lt;- t.test(Bear$Nat_2c_default_corridors, Random_Bear$Nat_2c_default_corridors)
+bear_ttest_3core &lt;- t.test(Bear$Nat_3c_default_corridors, Random_Bear$Nat_3c_default_corridors)
+bear_ttest_bar &lt;- t.test(Bear$GP_Nat_bar_corridors, Random_Bear$GP_Nat_bar_corridors)
+bear_ttest_bar_close &lt;- t.test(Bear$GP_bar_close_corridors, Random_Bear$GP_bar_close_corridors)
+bear_ttest_node &lt;- t.test(Bear$GP_Nat_node_corridors, Random_Bear$GP_Nat_node_corridors)
+bear_ttest_node_close &lt;- t.test(Bear$node_close_corridors, Random_Bear$node_close_corridors)
+bear_ttest_2core_trunk &lt;- t.test(Bear$Nat_2c_default_corridors_truncated_at_200k, Random_Bear$Nat_2c_default_corridors_truncated_at_200k, conf.level = 0.95)
+bear_ttest_3core_trunk &lt;- t.test(Bear$Nat_3c_default_corridors_truncated_at_200k, Random_Bear$Nat_3c_default_corridors_truncated_at_200k)
+bear_ttest_bar_trunk &lt;- t.test(Bear$GP_Nat_bar_corridors_truncated_at_200k, Random_Bear$GP_Nat_bar_corridors_truncated_at_200k)
+bear_ttest_bar_close_trunk &lt;- t.test(Bear$GP_bar_close_corridors_truncated_at_200k, Random_Bear$GP_bar_close_corridors_truncated_at_200k)
+bear_ttest_node_trunk &lt;- t.test(Bear$GP_Nat_node_corridors_truncated_at_200k, Random_Bear$GP_Nat_node_corridors_truncated_at_200k)
+bear_ttest_node_close_trunk &lt;- t.test(Bear$node_close_corridors_truncated_at_200k, Random_Bear$node_close_corridors_truncated_at_200k)
+
+bear_ttest_resistance</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bear$Nat_resistance_2011 and Random_Bear$Nat_resistance_2011
+## t = 2.2212, df = 749.47, p-value = 0.02663
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  0.05763517 0.93444926
+## sample estimates:
+## mean of x mean of y 
+##  3.277045  2.781003</code></pre>
+<pre class="r"><code>bear_ttest_2core</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bear$Nat_2c_default_corridors and Random_Bear$Nat_2c_default_corridors
+## t = 7.9974, df = 700.02, p-value = 5.261e-15
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  38058.74 62825.72
+## sample estimates:
+## mean of x mean of y 
+##  217782.4  167340.2</code></pre>
+<pre class="r"><code>bear_ttest_3core</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bear$Nat_3c_default_corridors and Random_Bear$Nat_3c_default_corridors
+## t = 12.505, df = 695.28, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  69513.72 95406.93
+## sample estimates:
+## mean of x mean of y 
+##  214386.5  131926.1</code></pre>
+<pre class="r"><code>bear_ttest_bar</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bear$GP_Nat_bar_corridors and Random_Bear$GP_Nat_bar_corridors
+## t = 6.141, df = 629.38, p-value = 1.453e-09
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  19957.25 38721.29
+## sample estimates:
+## mean of x mean of y 
+##  115381.8   86042.5</code></pre>
+<pre class="r"><code>bear_ttest_bar_close</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bear$GP_bar_close_corridors and Random_Bear$GP_bar_close_corridors
+## t = 6.4004, df = 731.86, p-value = 2.767e-10
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  37027.10 69792.09
+## sample estimates:
+## mean of x mean of y 
+##  244200.2  190790.6</code></pre>
+<pre class="r"><code>bear_ttest_node</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bear$GP_Nat_node_corridors and Random_Bear$GP_Nat_node_corridors
+## t = 1.6988, df = 636.29, p-value = 0.08984
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -1094.575 15133.974
+## sample estimates:
+## mean of x mean of y 
+##  54844.33  47824.63</code></pre>
+<pre class="r"><code>bear_ttest_node_close</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bear$node_close_corridors and Random_Bear$node_close_corridors
+## t = 6.3653, df = 734.65, p-value = 3.432e-10
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  29888.04 56546.46
+## sample estimates:
+## mean of x mean of y 
+##  166627.1  123409.9</code></pre>
+<pre class="r"><code>bear_ttest_2core_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bear$Nat_2c_default_corridors_truncated_at_200k and Random_Bear$Nat_2c_default_corridors_truncated_at_200k
+## t = 7.107, df = 332.59, p-value = 7.272e-12
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  26737.95 47204.22
+## sample estimates:
+## mean of x mean of y 
+##  147311.1  110340.0</code></pre>
+<pre class="r"><code>bear_ttest_3core_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bear$Nat_3c_default_corridors_truncated_at_200k and Random_Bear$Nat_3c_default_corridors_truncated_at_200k
+## t = 10.343, df = 352.46, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  44238.63 65012.23
+## sample estimates:
+## mean of x mean of y 
+## 144802.69  90177.26</code></pre>
+<pre class="r"><code>bear_ttest_bar_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bear$GP_Nat_bar_corridors_truncated_at_200k and Random_Bear$GP_Nat_bar_corridors_truncated_at_200k
+## t = 11.275, df = 652.38, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  33359.96 47429.73
+## sample estimates:
+## mean of x mean of y 
+## 109880.53  69485.68</code></pre>
+<pre class="r"><code>bear_ttest_bar_close_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bear$GP_bar_close_corridors_truncated_at_200k and Random_Bear$GP_bar_close_corridors_truncated_at_200k
+## t = 6.4577, df = 325.05, p-value = 3.874e-10
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  26456.28 49637.97
+## sample estimates:
+## mean of x mean of y 
+## 137109.11  99061.99</code></pre>
+<pre class="r"><code>bear_ttest_node_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bear$GP_Nat_node_corridors_truncated_at_200k and Random_Bear$GP_Nat_node_corridors_truncated_at_200k
+## t = 4.3403, df = 700.34, p-value = 1.633e-05
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##   7440.044 19731.211
+## sample estimates:
+## mean of x mean of y 
+##  52770.37  39184.74</code></pre>
+<pre class="r"><code>bear_ttest_node_close_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bear$node_close_corridors_truncated_at_200k and Random_Bear$node_close_corridors_truncated_at_200k
+## t = 8.08, df = 554.18, p-value = 4.077e-15
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  28615.10 46996.42
+## sample estimates:
+## mean of x mean of y 
+## 120554.14  82748.38</code></pre>
+<pre class="r"><code>#Running Statistical Tests for bobcats againgsd the various identified corridors
+
+bobcat_ttest_resistance &lt;- t.test(Bobcat$Nat_resistance_2011, Random_Bobcat$Nat_resistance_2011)
+bobcat_ttest_2core &lt;- t.test(Bobcat$Nat_2c_default_corridors, Random_Bobcat$Nat_2c_default_corridors)
+bobcat_ttest_3core &lt;- t.test(Bobcat$Nat_3c_default_corridors, Random_Bobcat$Nat_3c_default_corridors)
+bobcat_ttest_bar &lt;- t.test(Bobcat$GP_Nat_bar_corridors, Random_Bobcat$GP_Nat_bar_corridors)
+bobcat_ttest_bar_close &lt;- t.test(Bobcat$GP_bar_close_corridors, Random_Bobcat$GP_bar_close_corridors)
+bobcat_ttest_node &lt;- t.test(Bobcat$GP_Nat_node_corridors, Random_Bobcat$GP_Nat_node_corridors)
+bobcat_ttest_node_close &lt;- t.test(Bobcat$node_close_corridors, Random_Bobcat$node_close_corridors)
+bobcat_ttest_2core_trunk &lt;- t.test(Bobcat$Nat_2c_default_corridors_truncated_at_200k, Random_Bobcat$Nat_2c_default_corridors_truncated_at_200k)
+bobcat_ttest_3core_trunk &lt;- t.test(Bobcat$Nat_3c_default_corridors_truncated_at_200k, Random_Bobcat$Nat_3c_default_corridors_truncated_at_200k)
+bobcat_ttest_bar_trunk &lt;- t.test(Bobcat$GP_Nat_bar_corridors_truncated_at_200k, Random_Bobcat$GP_Nat_bar_corridors_truncated_at_200k)
+bobcat_ttest_bar_close_trunk &lt;- t.test(Bobcat$GP_bar_close_corridors_truncated_at_200k, Random_Bobcat$GP_bar_close_corridors_truncated_at_200k)
+bobcat_ttest_node_trunk &lt;- t.test(Bobcat$GP_Nat_node_corridors_truncated_at_200k, Random_Bobcat$GP_Nat_node_corridors_truncated_at_200k)
+bobcat_ttest_node_close_trunk &lt;- t.test(Bobcat$node_close_corridors_truncated_at_200k, Random_Bobcat$node_close_corridors_truncated_at_200k)
+
+bobcat_ttest_resistance</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bobcat$Nat_resistance_2011 and Random_Bobcat$Nat_resistance_2011
+## t = 6.5395, df = 936.58, p-value = 1.013e-10
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  0.9694214 1.8007399
+## sample estimates:
+## mean of x mean of y 
+##  4.209677  2.824597</code></pre>
+<pre class="r"><code>bobcat_ttest_2core</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bobcat$Nat_2c_default_corridors and Random_Bobcat$Nat_2c_default_corridors
+## t = 15.851, df = 839.37, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  77181.57 98998.03
+## sample estimates:
+## mean of x mean of y 
+##  253443.1  165353.3</code></pre>
+<pre class="r"><code>bobcat_ttest_3core</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bobcat$Nat_3c_default_corridors and Random_Bobcat$Nat_3c_default_corridors
+## t = 20.53, df = 821.19, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  108224.9 131107.7
+## sample estimates:
+## mean of x mean of y 
+##  252607.1  132940.7</code></pre>
+<pre class="r"><code>bobcat_ttest_bar</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bobcat$GP_Nat_bar_corridors and Random_Bobcat$GP_Nat_bar_corridors
+## t = 18.446, df = 970.47, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  78366.09 97025.16
+## sample estimates:
+## mean of x mean of y 
+## 168980.89  81285.26</code></pre>
+<pre class="r"><code>bobcat_ttest_bar_close</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bobcat$GP_bar_close_corridors and Random_Bobcat$GP_bar_close_corridors
+## t = 9.3301, df = 791.43, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  50753.05 77799.23
+## sample estimates:
+## mean of x mean of y 
+##  255140.5  190864.3</code></pre>
+<pre class="r"><code>bobcat_ttest_node</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bobcat$GP_Nat_node_corridors and Random_Bobcat$GP_Nat_node_corridors
+## t = 16.209, df = 978.46, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  63379.32 80839.58
+## sample estimates:
+## mean of x mean of y 
+## 116179.19  44069.74</code></pre>
+<pre class="r"><code>bobcat_ttest_node_close</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bobcat$node_close_corridors and Random_Bobcat$node_close_corridors
+## t = 12.314, df = 829.13, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  58646.31 80888.67
+## sample estimates:
+## mean of x mean of y 
+##  192924.6  123157.1</code></pre>
+<pre class="r"><code>bobcat_ttest_2core_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bobcat$Nat_2c_default_corridors_truncated_at_200k and Random_Bobcat$Nat_2c_default_corridors_truncated_at_200k
+## t = 11.594, df = 223.44, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  47953.73 67593.40
+## sample estimates:
+## mean of x mean of y 
+##  163211.6  105438.0</code></pre>
+<pre class="r"><code>bobcat_ttest_3core_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bobcat$Nat_3c_default_corridors_truncated_at_200k and Random_Bobcat$Nat_3c_default_corridors_truncated_at_200k
+## t = 14.42, df = 207.41, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  65607.45 86387.30
+## sample estimates:
+## mean of x mean of y 
+## 160481.94  84484.57</code></pre>
+<pre class="r"><code>bobcat_ttest_bar_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bobcat$GP_Nat_bar_corridors_truncated_at_200k and Random_Bobcat$GP_Nat_bar_corridors_truncated_at_200k
+## t = 19.092, df = 787.88, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  58187.62 71524.12
+## sample estimates:
+## mean of x mean of y 
+## 129626.16  64770.28</code></pre>
+<pre class="r"><code>bobcat_ttest_bar_close_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bobcat$GP_bar_close_corridors_truncated_at_200k and Random_Bobcat$GP_bar_close_corridors_truncated_at_200k
+## t = 14.64, df = 398.38, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  60523.28 79299.55
+## sample estimates:
+## mean of x mean of y 
+## 163882.67  93971.25</code></pre>
+<pre class="r"><code>bobcat_ttest_node_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bobcat$GP_Nat_node_corridors_truncated_at_200k and Random_Bobcat$GP_Nat_node_corridors_truncated_at_200k
+## t = 17.546, df = 751.67, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  53217.03 66625.29
+## sample estimates:
+## mean of x mean of y 
+##  93784.96  33863.80</code></pre>
+<pre class="r"><code>bobcat_ttest_node_close_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Bobcat$node_close_corridors_truncated_at_200k and Random_Bobcat$node_close_corridors_truncated_at_200k
+## t = 15.874, df = 644.59, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  55742.19 71480.33
+## sample estimates:
+## mean of x mean of y 
+## 140806.64  77195.38</code></pre>
+<pre class="r"><code>#Running Statistical Tests for fishers againgsd the various identified corridors
+
+fisher_ttest_resistance &lt;- t.test(Fisher$Nat_resistance_2011, Random_Fisher$Nat_resistance_2011)
+fisher_ttest_2core &lt;- t.test(Fisher$Nat_2c_default_corridors, Random_Fisher$Nat_2c_default_corridors)
+fisher_ttest_3core &lt;- t.test(Fisher$Nat_3c_default_corridors, Random_Fisher$Nat_3c_default_corridors)
+fisher_ttest_bar &lt;- t.test(Fisher$GP_Nat_bar_corridors, Random_Fisher$GP_Nat_bar_corridors)
+fisher_ttest_bar_close &lt;- t.test(Fisher$GP_bar_close_corridors, Random_Fisher$GP_Nat_bar_corridors)
+fisher_ttest_node &lt;- t.test(Fisher$GP_Nat_node_corridors, Random_Fisher$GP_Nat_node_corridors)
+fisher_ttest_node_close &lt;- t.test(Fisher$node_close_corridors, Random_Fisher$node_close_corridors)
+fisher_ttest_2core_trunk &lt;- t.test(Fisher$Nat_2c_default_corridors_truncated_at_200k, Random_Fisher$Nat_2c_default_corridors_truncated_at_200k)
+fisher_ttest_3core_trunk &lt;- t.test(Fisher$Nat_3c_default_corridors_truncated_at_200k, Random_Fisher$Nat_3c_default_corridors_truncated_at_200k)
+fisher_ttest_bar_trunk &lt;- t.test(Fisher$GP_Nat_bar_corridors_truncated_at_200k, Random_Fisher$GP_Nat_bar_corridors_truncated_at_200k)
+fisher_ttest_bar_close_trunk &lt;- t.test(Fisher$GP_bar_close_corridors_truncated_at_200k, Random_Fisher$GP_bar_close_corridors_truncated_at_200k)
+fisher_ttest_node_trunk &lt;- t.test(Fisher$GP_Nat_node_corridors_truncated_at_200k, Random_Fisher$GP_Nat_node_corridors_truncated_at_200k)
+fisher_ttest_node_close_trunk &lt;- t.test(Fisher$node_close_corridors_truncated_at_200k, Random_Fisher$node_close_corridors_truncated_at_200k)
+
+fisher_ttest_resistance</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Fisher$Nat_resistance_2011 and Random_Fisher$Nat_resistance_2011
+## t = 0.56108, df = 268.72, p-value = 0.5752
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.4982378  0.8954010
+## sample estimates:
+## mean of x mean of y 
+##  2.872340  2.673759</code></pre>
+<pre class="r"><code>fisher_ttest_2core</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Fisher$Nat_2c_default_corridors and Random_Fisher$Nat_2c_default_corridors
+## t = 7.0676, df = 246.79, p-value = 1.608e-11
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  54671.90 96917.45
+## sample estimates:
+## mean of x mean of y 
+##  226324.3  150529.6</code></pre>
+<pre class="r"><code>fisher_ttest_3core</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Fisher$Nat_3c_default_corridors and Random_Fisher$Nat_3c_default_corridors
+## t = 9.458, df = 253.11, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##   79308.25 121021.61
+## sample estimates:
+## mean of x mean of y 
+##  220314.2  120149.3</code></pre>
+<pre class="r"><code>fisher_ttest_bar</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Fisher$GP_Nat_bar_corridors and Random_Fisher$GP_Nat_bar_corridors
+## t = 3.5109, df = 198.21, p-value = 0.0005528
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  11831.78 42154.91
+## sample estimates:
+## mean of x mean of y 
+##  98111.25  71117.90</code></pre>
+<pre class="r"><code>fisher_ttest_bar_close</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Fisher$GP_bar_close_corridors and Random_Fisher$GP_Nat_bar_corridors
+## t = 19.009, df = 261.1, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  196377.9 241762.9
+## sample estimates:
+## mean of x mean of y 
+##  290188.3   71117.9</code></pre>
+<pre class="r"><code>fisher_ttest_node</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Fisher$GP_Nat_node_corridors and Random_Fisher$GP_Nat_node_corridors
+## t = -0.66494, df = 172.79, p-value = 0.507
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -16727.358   8297.046
+## sample estimates:
+## mean of x mean of y 
+##  35219.16  39434.31</code></pre>
+<pre class="r"><code>fisher_ttest_node_close</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Fisher$node_close_corridors and Random_Fisher$node_close_corridors
+## t = 7.3028, df = 266.86, p-value = 3.252e-12
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##   60288.61 104796.98
+## sample estimates:
+## mean of x mean of y 
+##  193561.6  111018.8</code></pre>
+<pre class="r"><code>fisher_ttest_2core_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Fisher$Nat_2c_default_corridors_truncated_at_200k and Random_Fisher$Nat_2c_default_corridors_truncated_at_200k
+## t = 2.9419, df = 55.668, p-value = 0.004747
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  11880.97 62614.41
+## sample estimates:
+## mean of x mean of y 
+##  137261.6  100013.9</code></pre>
+<pre class="r"><code>fisher_ttest_3core_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Fisher$Nat_3c_default_corridors_truncated_at_200k and Random_Fisher$Nat_3c_default_corridors_truncated_at_200k
+## t = 3.8685, df = 59.385, p-value = 0.0002745
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  22509.12 70732.17
+## sample estimates:
+## mean of x mean of y 
+## 134939.51  88318.87</code></pre>
+<pre class="r"><code>fisher_ttest_bar_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Fisher$GP_Nat_bar_corridors_truncated_at_200k and Random_Fisher$GP_Nat_bar_corridors_truncated_at_200k
+## t = 6.8269, df = 235.74, p-value = 7.289e-11
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  26851.39 48635.03
+## sample estimates:
+## mean of x mean of y 
+##  96479.08  58735.87</code></pre>
+<pre class="r"><code>fisher_ttest_bar_close_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Fisher$GP_bar_close_corridors_truncated_at_200k and Random_Fisher$GP_bar_close_corridors_truncated_at_200k
+## t = 1.0411, df = 30.966, p-value = 0.3059
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -16329.87  50385.10
+## sample estimates:
+## mean of x mean of y 
+##  99527.86  82500.25</code></pre>
+<pre class="r"><code>fisher_ttest_node_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Fisher$GP_Nat_node_corridors_truncated_at_200k and Random_Fisher$GP_Nat_node_corridors_truncated_at_200k
+## t = 1.3942, df = 225.01, p-value = 0.1646
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -2293.962 13392.478
+## sample estimates:
+## mean of x mean of y 
+##  35219.16  29669.90</code></pre>
+<pre class="r"><code>fisher_ttest_node_close_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Fisher$node_close_corridors_truncated_at_200k and Random_Fisher$node_close_corridors_truncated_at_200k
+## t = 5.0608, df = 155.89, p-value = 1.162e-06
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  27901.51 63625.62
+## sample estimates:
+## mean of x mean of y 
+## 119982.47  74218.91</code></pre>
+<pre class="r"><code>#Running Statistical Tests for all focal species againgsd the various identified corridors
+
+focal_species_ttest_resistance &lt;- t.test(Focal_Species$Nat_resistance_2011, Random_Focal_Species$Nat_resistance_2011)
+focal_species_ttest_2core &lt;- t.test(Focal_Species$Nat_2c_default_corridors, Random_Focal_Species$Nat_2c_default_corridors)
+focal_species_ttest_3core &lt;- t.test(Focal_Species$Nat_3c_default_corridors, Random_Focal_Species$Nat_3c_default_corridors)
+focal_species_ttest_bar &lt;- t.test(Focal_Species$GP_Nat_bar_corridors, Random_Focal_Species$GP_Nat_bar_corridors)
+focal_species_ttest_bar_close &lt;- t.test(Focal_Species$GP_bar_close_corridors, Random_Focal_Species$GP_bar_close_corridors)
+focal_species_ttest_node &lt;- t.test(Focal_Species$GP_Nat_node_corridors, Random_Focal_Species$GP_Nat_node_corridors)
+focal_species_ttest_node_close &lt;- t.test(Focal_Species$node_close_corridors, Random_Focal_Species$node_close_corridors)
+focal_species_ttest_2core_trunk &lt;- t.test(Focal_Species$Nat_2c_default_corridors_truncated_at_200k, Random_Fisher$Nat_2c_default_corridors_truncated_at_200k)
+focal_species_ttest_3core_trunk &lt;- t.test(Focal_Species$Nat_3c_default_corridors_truncated_at_200k, Random_Focal_Species$Nat_3c_default_corridors_truncated_at_200k)
+focal_species_ttest_bar_trunk &lt;- t.test(Focal_Species$GP_Nat_bar_corridors_truncated_at_200k, Focal_Species$GP_Nat_bar_corridors_truncated_at_200k)
+focal_species_ttest_bar_close_trunk &lt;- t.test(Focal_Species$GP_bar_close_corridors_truncated_at_200k, Random_Focal_Species$GP_bar_close_corridors_truncated_at_200k)
+focal_species_ttest_node_trunk &lt;- t.test(Focal_Species$GP_Nat_node_corridors_truncated_at_200k, Random_Focal_Species$GP_Nat_node_corridors_truncated_at_200k)
+focal_species_ttest_node_close_trunk &lt;- t.test(Focal_Species$node_close_corridors_truncated_at_200k, Random_Focal_Species$node_close_corridors_truncated_at_200k)
+
+focal_species_ttest_resistance</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Focal_Species$Nat_resistance_2011 and Random_Focal_Species$Nat_resistance_2011
+## t = 6.2391, df = 1955.2, p-value = 5.379e-10
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  0.6094056 1.1681535
+## sample estimates:
+## mean of x mean of y 
+##  3.676181  2.787402</code></pre>
+<pre class="r"><code>focal_species_ttest_2core</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Focal_Species$Nat_2c_default_corridors and Random_Focal_Species$Nat_2c_default_corridors
+## t = 18.439, df = 1819.6, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  64645.12 80034.40
+## sample estimates:
+## mean of x mean of y 
+##  236377.0  164037.3</code></pre>
+<pre class="r"><code>focal_species_ttest_3core</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Focal_Species$Nat_3c_default_corridors and Random_Focal_Species$Nat_3c_default_corridors
+## t = 25.279, df = 1807.3, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##   95083.25 111078.60
+## sample estimates:
+## mean of x mean of y 
+##  233868.0  130787.1</code></pre>
+<pre class="r"><code>focal_species_ttest_bar</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Focal_Species$GP_Nat_bar_corridors and Random_Focal_Species$GP_Nat_bar_corridors
+## t = 17.685, df = 1955.1, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  51126.00 63879.27
+## sample estimates:
+## mean of x mean of y 
+## 139151.47  81648.84</code></pre>
+<pre class="r"><code>focal_species_ttest_bar_close</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Focal_Species$GP_bar_close_corridors and Random_Focal_Species$GP_bar_close_corridors
+## t = 13.345, df = 1845.1, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  57116.47 76797.02
+## sample estimates:
+## mean of x mean of y 
+##  255923.3  188966.6</code></pre>
+<pre class="r"><code>focal_species_ttest_node</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Focal_Species$GP_Nat_node_corridors and Random_Focal_Species$GP_Nat_node_corridors
+## t = 12.417, df = 2030, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  31355.57 43117.69
+## sample estimates:
+## mean of x mean of y 
+##  82063.76  44827.13</code></pre>
+<pre class="r"><code>focal_species_ttest_node_close</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Focal_Species$node_close_corridors and Random_Focal_Species$node_close_corridors
+## t = 15.096, df = 1871.1, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  53628.56 69644.17
+## sample estimates:
+## mean of x mean of y 
+##  183203.2  121566.9</code></pre>
+<pre class="r"><code>focal_species_ttest_2core_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Focal_Species$Nat_2c_default_corridors_truncated_at_200k and Random_Fisher$Nat_2c_default_corridors_truncated_at_200k
+## t = 7.6847, df = 145.31, p-value = 2.097e-12
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  38340.84 64891.07
+## sample estimates:
+## mean of x mean of y 
+##  151629.9  100013.9</code></pre>
+<pre class="r"><code>focal_species_ttest_3core_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Focal_Species$Nat_3c_default_corridors_truncated_at_200k and Random_Focal_Species$Nat_3c_default_corridors_truncated_at_200k
+## t = 16.887, df = 592.09, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  54472.08 68810.38
+## sample estimates:
+## mean of x mean of y 
+## 148816.29  87175.06</code></pre>
+<pre class="r"><code>focal_species_ttest_bar_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Focal_Species$GP_Nat_bar_corridors_truncated_at_200k and Focal_Species$GP_Nat_bar_corridors_truncated_at_200k
+## t = 0, df = 1670, p-value = 1
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -4056.223  4056.223
+## sample estimates:
+## mean of x mean of y 
+##  115541.1  115541.1</code></pre>
+<pre class="r"><code>focal_species_ttest_bar_close_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Focal_Species$GP_bar_close_corridors_truncated_at_200k and Random_Focal_Species$GP_bar_close_corridors_truncated_at_200k
+## t = 13.649, df = 711.78, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  44817.83 59877.07
+## sample estimates:
+## mean of x mean of y 
+##  146564.1   94216.7</code></pre>
+<pre class="r"><code>focal_species_ttest_node_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Focal_Species$GP_Nat_node_corridors_truncated_at_200k and Random_Focal_Species$GP_Nat_node_corridors_truncated_at_200k
+## t = 15.054, df = 1822.7, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  28787.50 37412.31
+## sample estimates:
+## mean of x mean of y 
+##  68367.48  35267.58</code></pre>
+<pre class="r"><code>focal_species_ttest_node_close_trunk</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Focal_Species$node_close_corridors_truncated_at_200k and Random_Focal_Species$node_close_corridors_truncated_at_200k
+## t = 17.26, df = 1389.1, p-value &lt; 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  44831.43 56328.36
+## sample estimates:
+## mean of x mean of y 
+## 129415.02  78835.12</code></pre>
 
 
 
