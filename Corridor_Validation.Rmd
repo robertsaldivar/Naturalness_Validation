@@ -33,7 +33,7 @@ bear_summary <- Bear %>%
   group_by(verbatimScientificName) %>%
   summarize( 
     resist_mean = mean(Nat_resistance_2011),
-    resist_st = sd(Nat_resistance_2011),
+    resist_sd = sd(Nat_resistance_2011),
     resist_length = length(Nat_resistance_2011),
     core2_mean = mean(Nat_2c_default_corridors),
     core2_sd = sd(Nat_2c_default_corridors),
@@ -47,24 +47,18 @@ bear_summary <- Bear %>%
     node_close_sd = sd(node_close_corridors),
     bar_close_mean = mean(GP_bar_close_corridors),
     bar_close_sd = sd(GP_bar_close_corridors),
-    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k),
-    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k),
-    core2_trunk_length = length(Nat_2c_default_corridors_truncated_at_200k),
-    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k),
-    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k),
-    core3_trunk_length = length(Nat_3c_default_corridors_truncated_at_200k),
-    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k),
-    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k),
-    bar_trunk_length = length(GP_Nat_bar_corridors_truncated_at_200k),
-    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k),
-    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k),
-    node_trunk_length = length(GP_Nat_node_corridors_truncated_at_200k),
-    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k),
-    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k),
-    node_close_trunk_length = length(node_close_corridors_truncated_at_200k),
-    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k),
-    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k),
-    bar_close_trunk_length = length(GP_bar_close_corridors_truncated_at_200k)
+    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
   )
 
 ```
@@ -75,7 +69,7 @@ bear_summary <- Bear %>%
 random_bear_summary <- Random_Bear %>%
   summarize( 
     resist_mean = mean(Nat_resistance_2011),
-    resist_st = sd(Nat_resistance_2011),
+    resist_sd = sd(Nat_resistance_2011),
     resist_length = length(Nat_resistance_2011),
     core2_mean = mean(Nat_2c_default_corridors),
     core2_sd = sd(Nat_2c_default_corridors),
@@ -89,24 +83,18 @@ random_bear_summary <- Random_Bear %>%
     node_close_sd = sd(node_close_corridors),
     bar_close_mean = mean(GP_bar_close_corridors),
     bar_close_sd = sd(GP_bar_close_corridors),
-    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k),
-    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k),
-    core2_trunk_length = length(Nat_2c_default_corridors_truncated_at_200k),
-    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k),
-    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k),
-    core3_trunk_length = length(Nat_3c_default_corridors_truncated_at_200k),
-    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k),
-    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k),
-    bar_trunk_length = length(GP_Nat_bar_corridors_truncated_at_200k),
-    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k),
-    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k),
-    node_trunk_length = length(GP_Nat_node_corridors_truncated_at_200k),
-    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k),
-    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k),
-    node_close_trunk_length = length(node_close_corridors_truncated_at_200k),
-    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k),
-    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k),
-    bar_close_trunk_length = length(GP_bar_close_corridors_truncated_at_200k)
+    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
   )
 
 ```
@@ -115,10 +103,9 @@ random_bear_summary <- Random_Bear %>%
 #looking at the summary information for bobcats points
 
 bobcat_summary <- Bobcat %>%
-  group_by(verbatimScientificName) %>%
   summarize( 
     resist_mean = mean(Nat_resistance_2011),
-    resist_st = sd(Nat_resistance_2011),
+    resist_sd = sd(Nat_resistance_2011),
     resist_length = length(Nat_resistance_2011),
     core2_mean = mean(Nat_2c_default_corridors),
     core2_sd = sd(Nat_2c_default_corridors),
@@ -132,24 +119,18 @@ bobcat_summary <- Bobcat %>%
     node_close_sd = sd(node_close_corridors),
     bar_close_mean = mean(GP_bar_close_corridors),
     bar_close_sd = sd(GP_bar_close_corridors),
-    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k),
-    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k),
-    core2_trunk_length = length(Nat_2c_default_corridors_truncated_at_200k),
-    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k),
-    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k),
-    core3_trunk_length = length(Nat_3c_default_corridors_truncated_at_200k),
-    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k),
-    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k),
-    bar_trunk_length = length(GP_Nat_bar_corridors_truncated_at_200k),
-    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k),
-    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k),
-    node_trunk_length = length(GP_Nat_node_corridors_truncated_at_200k),
-    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k),
-    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k),
-    node_close_trunk_length = length(node_close_corridors_truncated_at_200k),
-    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k),
-    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k),
-    bar_close_trunk_length = length(GP_bar_close_corridors_truncated_at_200k)
+    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
   )
 
 ```
@@ -160,7 +141,7 @@ bobcat_summary <- Bobcat %>%
 random_bobcatr_summary <- Random_Bobcat %>%
   summarize( 
     resist_mean = mean(Nat_resistance_2011),
-    resist_st = sd(Nat_resistance_2011),
+    resist_sd = sd(Nat_resistance_2011),
     resist_length = length(Nat_resistance_2011),
     core2_mean = mean(Nat_2c_default_corridors),
     core2_sd = sd(Nat_2c_default_corridors),
@@ -174,24 +155,18 @@ random_bobcatr_summary <- Random_Bobcat %>%
     node_close_sd = sd(node_close_corridors),
     bar_close_mean = mean(GP_bar_close_corridors),
     bar_close_sd = sd(GP_bar_close_corridors),
-    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k),
-    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k),
-    core2_trunk_length = length(Nat_2c_default_corridors_truncated_at_200k),
-    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k),
-    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k),
-    core3_trunk_length = length(Nat_3c_default_corridors_truncated_at_200k),
-    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k),
-    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k),
-    bar_trunk_length = length(GP_Nat_bar_corridors_truncated_at_200k),
-    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k),
-    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k),
-    node_trunk_length = length(GP_Nat_node_corridors_truncated_at_200k),
-    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k),
-    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k),
-    node_close_trunk_length = length(node_close_corridors_truncated_at_200k),
-    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k),
-    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k),
-    bar_close_trunk_length = length(GP_bar_close_corridors_truncated_at_200k)
+    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
   )
 
 ```
@@ -203,7 +178,7 @@ fisher_summary <- Fisher %>%
   group_by(verbatimScientificName) %>%
   summarize( 
     resist_mean = mean(Nat_resistance_2011),
-    resist_st = sd(Nat_resistance_2011),
+    resist_sd = sd(Nat_resistance_2011),
     resist_length = length(Nat_resistance_2011),
     core2_mean = mean(Nat_2c_default_corridors),
     core2_sd = sd(Nat_2c_default_corridors),
@@ -217,24 +192,18 @@ fisher_summary <- Fisher %>%
     node_close_sd = sd(node_close_corridors),
     bar_close_mean = mean(GP_bar_close_corridors),
     bar_close_sd = sd(GP_bar_close_corridors),
-    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k),
-    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k),
-    core2_trunk_length = length(Nat_2c_default_corridors_truncated_at_200k),
-    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k),
-    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k),
-    core3_trunk_length = length(Nat_3c_default_corridors_truncated_at_200k),
-    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k),
-    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k),
-    bar_trunk_length = length(GP_Nat_bar_corridors_truncated_at_200k),
-    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k),
-    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k),
-    node_trunk_length = length(GP_Nat_node_corridors_truncated_at_200k),
-    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k),
-    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k),
-    node_close_trunk_length = length(node_close_corridors_truncated_at_200k),
-    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k),
-    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k),
-    bar_close_trunk_length = length(GP_bar_close_corridors_truncated_at_200k)
+    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
   )
 
 ```
@@ -245,7 +214,7 @@ fisher_summary <- Fisher %>%
 random_fisher_summary <- Random_Fisher %>%
   summarize( 
     resist_mean = mean(Nat_resistance_2011),
-    resist_st = sd(Nat_resistance_2011),
+    resist_sd = sd(Nat_resistance_2011),
     resist_length = length(Nat_resistance_2011),
     core2_mean = mean(Nat_2c_default_corridors),
     core2_sd = sd(Nat_2c_default_corridors),
@@ -259,24 +228,18 @@ random_fisher_summary <- Random_Fisher %>%
     node_close_sd = sd(node_close_corridors),
     bar_close_mean = mean(GP_bar_close_corridors),
     bar_close_sd = sd(GP_bar_close_corridors),
-    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k),
-    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k),
-    core2_trunk_length = length(Nat_2c_default_corridors_truncated_at_200k),
-    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k),
-    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k),
-    core3_trunk_length = length(Nat_3c_default_corridors_truncated_at_200k),
-    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k),
-    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k),
-    bar_trunk_length = length(GP_Nat_bar_corridors_truncated_at_200k),
-    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k),
-    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k),
-    node_trunk_length = length(GP_Nat_node_corridors_truncated_at_200k),
-    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k),
-    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k),
-    node_close_trunk_length = length(node_close_corridors_truncated_at_200k),
-    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k),
-    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k),
-    bar_close_trunk_length = length(GP_bar_close_corridors_truncated_at_200k)
+    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
   )
 ```
 
@@ -287,7 +250,7 @@ Focal_Species_summary <- Focal_Species %>%
   group_by(verbatimScientificName) %>%
   summarize( 
     resist_mean = mean(Nat_resistance_2011),
-    resist_st = sd(Nat_resistance_2011),
+    resist_sd = sd(Nat_resistance_2011),
     resist_length = length(Nat_resistance_2011),
     core2_mean = mean(Nat_2c_default_corridors),
     core2_sd = sd(Nat_2c_default_corridors),
@@ -301,24 +264,18 @@ Focal_Species_summary <- Focal_Species %>%
     node_close_sd = sd(node_close_corridors),
     bar_close_mean = mean(GP_bar_close_corridors),
     bar_close_sd = sd(GP_bar_close_corridors),
-    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k),
-    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k),
-    core2_trunk_length = length(Nat_2c_default_corridors_truncated_at_200k),
-    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k),
-    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k),
-    core3_trunk_length = length(Nat_3c_default_corridors_truncated_at_200k),
-    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k),
-    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k),
-    bar_trunk_length = length(GP_Nat_bar_corridors_truncated_at_200k),
-    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k),
-    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k),
-    node_trunk_length = length(GP_Nat_node_corridors_truncated_at_200k),
-    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k),
-    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k),
-    node_close_trunk_length = length(node_close_corridors_truncated_at_200k),
-    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k),
-    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k),
-    bar_close_trunk_length = length(GP_bar_close_corridors_truncated_at_200k)
+    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
   )
 
 ```
@@ -329,7 +286,7 @@ Focal_Species_summary <- Focal_Species %>%
 random_focal_species_summary <- Random_Focal_Species %>%
   summarize( 
     resist_mean = mean(Nat_resistance_2011),
-    resist_st = sd(Nat_resistance_2011),
+    resist_sd = sd(Nat_resistance_2011),
     resist_length = length(Nat_resistance_2011),
     core2_mean = mean(Nat_2c_default_corridors),
     core2_sd = sd(Nat_2c_default_corridors),
@@ -343,49 +300,63 @@ random_focal_species_summary <- Random_Focal_Species %>%
     node_close_sd = sd(node_close_corridors),
     bar_close_mean = mean(GP_bar_close_corridors),
     bar_close_sd = sd(GP_bar_close_corridors),
-    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k),
-    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k),
-    core2_trunk_length = length(Nat_2c_default_corridors_truncated_at_200k),
-    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k),
-    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k),
-    core3_trunk_length = length(Nat_3c_default_corridors_truncated_at_200k),
-    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k),
-    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k),
-    bar_trunk_length = length(GP_Nat_bar_corridors_truncated_at_200k),
-    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k),
-    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k),
-    node_trunk_length = length(GP_Nat_node_corridors_truncated_at_200k),
-    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k),
-    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k),
-    node_close_trunk_length = length(node_close_corridors_truncated_at_200k),
-    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k),
-    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k),
-    bar_close_trunk_length = length(GP_bar_close_corridors_truncated_at_200k)
+    core2_trunk_mean = mean(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core2_trunk_sd = sd(Nat_2c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_mean = mean(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    core3_trunk_sd = sd(Nat_3c_default_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_mean = mean(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_trunk_sd = sd(GP_Nat_bar_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_mean = mean(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_trunk_sd = sd(GP_Nat_node_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
   )
 ```
 
 ```{r}
-#Running Statistical Tests for bears againgst the various identified corridors
+#Going to try to join the summary tables into a together
 
-bear_ttest_resistance <- t.test()
-bear_ttest_2core <- t.test()
-bear_ttest_3core <- t.test()
-bear_ttest_bar <- t.test
-bear_ttest_bar_close <- t.test()
-bear_ttest_node <- t.test()
-bear_ttest_node_close <- t.test()
-bear_ttest_2core_trunk <- t.test()
-bear_ttest_3core_trunk <- t.test()
-bear_ttest_bar_trunk <- t.test()
-bear_ttest_bar_close_trunk <- t.test()
-bear_ttest_node_trunk <- t.test()
-bear_ttest_node_close_trunk <- t.test()
+```
+
+
+```{r}
+#Running Statistical Tests for bears againgsd the various identified corridors
+
+bear_ttest_resistance <- t.test(Bear$Nat_resistance_2011, Random_Bear$Nat_resistance_2011)
+bear_ttest_2core <- t.test(Bear$Nat_2c_default_corridors, Random_Bear$Nat_2c_default_corridors)
+bear_ttest_3core <- t.test(Bear$Nat_3c_default_corridors, Random_Bear$Nat_3c_default_corridors)
+bear_ttest_bar <- t.test(Bear$GP_Nat_bar_corridors, Random_Bear$GP_Nat_bar_corridors)
+bear_ttest_bar_close <- t.test(Bear$GP_bar_close_corridors, Random_Bear$GP_bar_close_corridors)
+bear_ttest_node <- t.test(Bear$GP_Nat_node_corridors, Random_Bear$GP_Nat_node_corridors)
+bear_ttest_node_close <- t.test(Bear$node_close_corridors, Random_Bear$node_close_corridors)
+bear_ttest_2core_trunk <- t.test(Bear$Nat_2c_default_corridors_truncated_at_200k, Random_Bear$Nat_2c_default_corridors_truncated_at_200k, conf.level = 0.95)
+bear_ttest_3core_trunk <- t.test(Bear$Nat_3c_default_corridors_truncated_at_200k, Random_Bear$Nat_3c_default_corridors_truncated_at_200k)
+bear_ttest_bar_trunk <- t.test(Bear$GP_Nat_bar_corridors_truncated_at_200k, Random_Bear$GP_Nat_bar_corridors_truncated_at_200k)
+bear_ttest_bar_close_trunk <- t.test(Bear$GP_bar_close_corridors_truncated_at_200k, Random_Bear$GP_bar_close_corridors_truncated_at_200k)
+bear_ttest_node_trunk <- t.test(Bear$GP_Nat_node_corridors_truncated_at_200k, Random_Bear$GP_Nat_node_corridors_truncated_at_200k)
+bear_ttest_node_close_trunk <- t.test(Bear$node_close_corridors_truncated_at_200k, Random_Bear$node_close_corridors_truncated_at_200k)
+
+bear_ttest_resistance
+bear_ttest_2core
+bear_ttest_3core
+bear_ttest_bar
+bear_ttest_bar_close
+bear_ttest_node
+bear_ttest_node_close
+bear_ttest_2core_trunk
+bear_ttest_3core_trunk
+bear_ttest_bar_trunk
+bear_ttest_bar_close_trunk
+bear_ttest_node_trunk
+bear_ttest_node_close_trunk
 
 
 ```
 
 ```{r}
-#Running Statistical Tests for bobcats againgst the various identified corridors
+#Running Statistical Tests for bobcats againgsd the various identified corridors
 
 bobcat_ttest_resistance <- t.test()
 bobcat_ttest_2core <- t.test()
@@ -401,10 +372,24 @@ bobcat_ttest_bar_close_trunk <- t.test()
 bobcat_ttest_node_trunk <- t.test()
 bobcat_ttest_node_close_trunk <- t.test()
 
+bobcat_ttest_resistance
+bobcat_ttest_2core
+bobcat_ttest_3core
+bobcat_ttest_bar
+bobcat_ttest_bar_close
+bobcat_ttest_node
+bobcat_ttest_node_close
+bobcat_ttest_2core_trunk
+bobcat_ttest_3core_trunk
+bobcat_ttest_bar_trunk
+bobcat_ttest_bar_close_trunk
+bobcat_ttest_node_trunk
+bobcat_ttest_node_close_trunk
+
 ```
 
 ```{r}
-#Running Statistical Tests for fishers againgst the various identified corridors
+#Running Statistical Tests for fishers againgsd the various identified corridors
 
 fisher_ttest_resistance <- t.test()
 fisher_ttest_2core <- t.test()
@@ -420,10 +405,23 @@ fisher_ttest_bar_close_trunk <- t.test()
 fisher_ttest_node_trunk <- t.test()
 fisher_ttest_node_close_trunk <- t.test()
 
+fisher_ttest_resistance
+fisher_ttest_2core
+fisher_ttest_3core
+fisher_ttest_bar
+fisher_ttest_bar_close
+fisher_ttest_node
+fisher_ttest_node_close
+fisher_ttest_2core_trunk
+fisher_ttest_3core_trunk
+fisher_ttest_bar_trunk
+fisher_ttest_bar_close_trunk
+fisher_ttest_node_trunk
+fisher_ttest_node_close_trunk
 ```
 
 ```{r}
-#Running Statistical Tests for all focal species againgst the various identified corridors
+#Running Statistical Tests for all focal species againgsd the various identified corridors
 
 focal_species_ttest_resistance <- t.test()
 focal_species_ttest_2core <- t.test()
@@ -438,6 +436,20 @@ focal_species_ttest_bar_trunk <- t.test()
 focal_species_ttest_bar_close_trunk <- t.test()
 focal_species_ttest_node_trunk <- t.test()
 focal_species_ttest_node_close_trunk <- t.test()
+
+focal_species_ttest_resistance
+focal_species_ttest_2core
+focal_species_ttest_3core
+focal_species_ttest_bar
+focal_species_ttest_bar_close
+focal_species_ttest_node
+focal_species_ttest_node_close
+focal_species_ttest_2core_trunk
+focal_species_ttest_3core_trunk
+focal_species_ttest_bar_trunk
+focal_species_ttest_bar_close_trunk
+focal_species_ttest_node_trunk
+focal_species_ttest_node_close_trunk
 
 ```
 
