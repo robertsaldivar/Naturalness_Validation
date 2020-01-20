@@ -247,7 +247,6 @@ random_fisher_summary <- Random_Fisher %>%
 #looking at the summary information for all focal species points
 
 Focal_Species_summary <- Focal_Species %>%
-  group_by(verbatimScientificName) %>%
   summarize( 
     resist_mean = mean(Nat_resistance_2011),
     resist_sd = sd(Nat_resistance_2011),
@@ -358,6 +357,8 @@ bear_ttest_bar_close_trunk
 bear_ttest_node_trunk
 bear_ttest_node_close_trunk
 
+#There is a significant difference for all of the corridors between the between the corridors between bear observations and random bear points, except for the nodes corridor. 
+
 
 ```
 
@@ -391,6 +392,8 @@ bobcat_ttest_bar_trunk
 bobcat_ttest_bar_close_trunk
 bobcat_ttest_node_trunk
 bobcat_ttest_node_close_trunk
+
+#There is a significant difference for all of the corridors between the between the corridors between bobcat observations and random bobcat points.
 
 ```
 
@@ -438,7 +441,7 @@ focal_species_ttest_node <- t.test(Focal_Species$GP_Nat_node_corridors, Random_F
 focal_species_ttest_node_close <- t.test(Focal_Species$node_close_corridors, Random_Focal_Species$node_close_corridors)
 focal_species_ttest_2core_trunk <- t.test(Focal_Species$Nat_2c_default_corridors_truncated_at_200k, Random_Fisher$Nat_2c_default_corridors_truncated_at_200k)
 focal_species_ttest_3core_trunk <- t.test(Focal_Species$Nat_3c_default_corridors_truncated_at_200k, Random_Focal_Species$Nat_3c_default_corridors_truncated_at_200k)
-focal_species_ttest_bar_trunk <- t.test(Focal_Species$GP_Nat_bar_corridors_truncated_at_200k, Focal_Species$GP_Nat_bar_corridors_truncated_at_200k)
+focal_species_ttest_bar_trunk <- t.test(Focal_Species$GP_Nat_bar_corridors_truncated_at_200k, Random_Focal_Species$GP_Nat_bar_corridors_truncated_at_200k)
 focal_species_ttest_bar_close_trunk <- t.test(Focal_Species$GP_bar_close_corridors_truncated_at_200k, Random_Focal_Species$GP_bar_close_corridors_truncated_at_200k)
 focal_species_ttest_node_trunk <- t.test(Focal_Species$GP_Nat_node_corridors_truncated_at_200k, Random_Focal_Species$GP_Nat_node_corridors_truncated_at_200k)
 focal_species_ttest_node_close_trunk <- t.test(Focal_Species$node_close_corridors_truncated_at_200k, Random_Focal_Species$node_close_corridors_truncated_at_200k)
