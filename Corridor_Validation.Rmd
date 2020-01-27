@@ -58,7 +58,11 @@ bear_summary <- Bear %>%
     node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
     node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
     bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
-    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+        core5_mean = mean(Nat_5c_corridors),
+    core5_sd = sd(Nat_5c_corridors),
+    core5_trunk_mean = mean(Nat_5c_corridors_truncated_at_200k, na.rm = TRUE),
+    core5_trunk_sd = sd(Nat_5c_corridors_truncated_at_200k, na.rm = TRUE)
   )
 
 ```
@@ -94,7 +98,11 @@ random_bear_summary <- Random_Bear %>%
     node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
     node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
     bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
-    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    core5_mean = mean(Nat_5c_corridors),
+    core5_sd = sd(Nat_5c_corridors),
+    core5_trunk_mean = mean(Nat_5c_corridors_truncated_at_200k, na.rm = TRUE),
+    core5_trunk_sd = sd(Nat_5c_corridors_truncated_at_200k, na.rm = TRUE)
   )
 
 ```
@@ -130,7 +138,11 @@ bobcat_summary <- Bobcat %>%
     node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
     node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
     bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
-    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    core5_mean = mean(Nat_5c_corridors),
+    core5_sd = sd(Nat_5c_corridors),
+    core5_trunk_mean = mean(Nat_5c_corridors_truncated_at_200k, na.rm = TRUE),
+    core5_trunk_sd = sd(Nat_5c_corridors_truncated_at_200k, na.rm = TRUE)
   )
 
 ```
@@ -166,7 +178,11 @@ random_bobcat_summary <- Random_Bobcat %>%
     node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
     node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
     bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
-    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    core5_mean = mean(Nat_5c_corridors),
+    core5_sd = sd(Nat_5c_corridors),
+    core5_trunk_mean = mean(Nat_5c_corridors_truncated_at_200k, na.rm = TRUE),
+    core5_trunk_sd = sd(Nat_5c_corridors_truncated_at_200k, na.rm = TRUE)
   )
 
 ```
@@ -203,7 +219,11 @@ fisher_summary <- Fisher %>%
     node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
     node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
     bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
-    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    core5_mean = mean(Nat_5c_corridors),
+    core5_sd = sd(Nat_5c_corridors),
+    core5_trunk_mean = mean(Nat_5c_corridors_truncated_at_200k, na.rm = TRUE),
+    core5_trunk_sd = sd(Nat_5c_corridors_truncated_at_200k, na.rm = TRUE)
   )
 
 ```
@@ -239,7 +259,11 @@ random_fisher_summary <- Random_Fisher %>%
     node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
     node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
     bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
-    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    core5_mean = mean(Nat_5c_corridors),
+    core5_sd = sd(Nat_5c_corridors),
+    core5_trunk_mean = mean(Nat_5c_corridors_truncated_at_200k, na.rm = TRUE),
+    core5_trunk_sd = sd(Nat_5c_corridors_truncated_at_200k, na.rm = TRUE)
   )
 ```
 
@@ -274,7 +298,11 @@ Focal_Species_summary <- Focal_Species %>%
     node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
     node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
     bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
-    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    core5_mean = mean(Nat_5c_corridors),
+    core5_sd = sd(Nat_5c_corridors),
+    core5_trunk_mean = mean(Nat_5c_corridors_truncated_at_200k, na.rm = TRUE),
+    core5_trunk_sd = sd(Nat_5c_corridors_truncated_at_200k, na.rm = TRUE)
   )
 
 ```
@@ -310,7 +338,11 @@ random_focal_species_summary <- Random_Focal_Species %>%
     node_close_trunk_mean = mean(node_close_corridors_truncated_at_200k, na.rm = TRUE),
     node_close_trunk_sd = sd(node_close_corridors_truncated_at_200k, na.rm = TRUE),
     bar_close_trunk_mean = mean(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
-    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE)
+    bar_close_trunk_sd = sd(GP_bar_close_corridors_truncated_at_200k, na.rm = TRUE),
+    core5_mean = mean(Nat_5c_corridors),
+    core5_sd = sd(Nat_5c_corridors),
+    core5_trunk_mean = mean(Nat_5c_corridors_truncated_at_200k, na.rm = TRUE),
+    core5_trunk_sd = sd(Nat_5c_corridors_truncated_at_200k, na.rm = TRUE)
   )
 ```
 
@@ -343,6 +375,7 @@ bear_ttest_bar_close_trunk <- t.test(Bear$GP_bar_close_corridors_truncated_at_20
 bear_ttest_node_trunk <- t.test(Bear$GP_Nat_node_corridors_truncated_at_200k, Random_Bear$GP_Nat_node_corridors_truncated_at_200k)
 bear_ttest_node_close_trunk <- t.test(Bear$node_close_corridors_truncated_at_200k, Random_Bear$node_close_corridors_truncated_at_200k)
 
+
 bear_ttest_resistance
 bear_ttest_2core
 bear_ttest_3core
@@ -356,6 +389,7 @@ bear_ttest_bar_trunk
 bear_ttest_bar_close_trunk
 bear_ttest_node_trunk
 bear_ttest_node_close_trunk
+
 
 #There is a significant difference for all of the corridors between the between the corridors between bear observations and random bear points, except for the nodes corridor. 
 
@@ -460,5 +494,28 @@ focal_species_ttest_bar_close_trunk
 focal_species_ttest_node_trunk
 focal_species_ttest_node_close_trunk
 
+```
+
+```{r}
+#Running tests for the new 5 core corridors that I ran
+
+bear_5core_ttest <- t.test(Bear$Nat_5c_corridors, Random_Bear$Nat_5c_corridors)
+bear_5core_trunk_ttest <- t.test(Bear$Nat_5c_corridors_truncated_at_200k, Random_Bear$Nat_5c_corridors_truncated_at_200k)
+bobcat_5core_ttest <- t.test(Bobcat$Nat_5c_corridors, Random_Bobcat$Nat_5c_corridors)
+bobcat_5core_trunk_ttest <- t.test(Bobcat$Nat_5c_corridors_truncated_at_200k, Random_Bobcat$Nat_5c_corridors_truncated_at_200k)
+fisher_5core_ttest <- t.test(Fisher$Nat_5c_corridors, Random_Fisher$Nat_5c_corridors)
+fisher_5core_trunk_ttest <- t.test(Fisher$Nat_5c_corridors_truncated_at_200k, Random_Fisher$Nat_5c_corridors_truncated_at_200k)
+focal_species_5core_ttest <- t.test(Focal_Species$Nat_5c_corridors, Random_Focal_Species$Nat_5c_corridors)
+focal_species_5core_trunk_ttest <- t.test(Focal_Species$Nat_5c_corridors_truncated_at_200k, Random_Focal_Species$Nat_5c_corridors_truncated_at_200k)
+
+
+bear_5core_ttest
+bear_5core_trunk_ttest
+bobcat_5core_ttest
+bobcat_5core_trunk_ttest
+fisher_5core_ttest
+fisher_5core_trunk_ttest
+focal_species_5core_ttest
+focal_species_5core_trunk_ttest
 ```
 
